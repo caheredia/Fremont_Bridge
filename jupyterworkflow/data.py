@@ -28,7 +28,7 @@ False):
     data.columns = ['East', 'West']
     data['Total'] = data['East'] + data['West']
     try: 
-        data.index = pd.to_datetime(data.index, format = '%m/%d/%Y %H:%M:%S %p')
+        data.index = pd.to_datetime(data.index, format = '%m/%d/%Y %I:%M:%S %p')
     except TypeError:
         data.index = pd.to_datetime(data.index)
     return data
