@@ -23,9 +23,12 @@ False):
     	The Fremont Bridge data
     '''
     if not os.path.exists(filename) or force_download:
-    	urlretrieve(URL, 'Fremont.csv')
-    data = pd.read_csv('Fremont.csv', 
-    index_col='Date',parse_dates=True)
-    data.columns = ['East','West']
-    data['Total']= data['East'] + data['West']
+        urlretrieve(URL, 'Fremont.csv')
+    data = pd.read_csv('Fremont.csv', index_col='Date')
+    data.columns = ['East', 'West']
+    data['Total'] = data['East'] + data['West']
+    try: 
+        data.index = pd.to_datetime(data.index, format = '%m/%d/%Y %H:%M:%S %p')
+    except TypeError:
+        data.index = pd.to_datetime(data.index)
     return data
