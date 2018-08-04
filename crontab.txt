@@ -1,0 +1,4 @@
+# m h dom m dow
+
+# run jupyter notebook with cron nbconvert and cron
+56 * * * * /Users/cristian/anaconda/bin/jupyter nbconvert --to notebook --execute  nbconvert --to notebook --execute /Volumes/Samy/Projects/Courses/Fremont_Bridge/2018-07-04\ Jupyter\ workflow.ipynb
