@@ -1,9 +1,14 @@
-from jupyterworkflow.data import get_fremont_data
-import pandas as pd 
+from jupyterworkflow.data import get_fremont_data, add_ints
+import pandas as pd
 import numpy as np
+
 
 def test_fremont_data():
     data = get_fremont_data()
     assert all(data.columns == ['East', 'West', 'Total'])
-    assert isinstance(data.index,pd.DatetimeIndex)
-    assert len(np.unique(data.index.time))==24
+    assert isinstance(data.index, pd.DatetimeIndex)
+    assert len(np.unique(data.index.time)) == 24
+
+
+def test_add():
+    assert add_ints(10, 5) == 15
