@@ -12,3 +12,6 @@ def test_fremont_data():
 
 def test_add():
     assert add_ints(10, 5) == 15
+    assert add_ints(-1, 1) == 0
+    assert add_ints(-2, -3) == -5
+    assert type(add_ints(10, 5)) == int
