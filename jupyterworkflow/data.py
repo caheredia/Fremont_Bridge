@@ -34,21 +34,3 @@ def get_fremont_data(filename='Fremont.csv', url=FREMONT_URL, force_download=Fal
     return data
 
 
-def add_ints(a, b):
-    """
-    Used for testing unit test functions.
-    Parameters
-    ----------
-    a : int
-        integer
-    b : int
-        integer
-
-    Returns
-    -------
-    data : int
-        sum of integers
-    """
-
-    data = a + b
-    return data
